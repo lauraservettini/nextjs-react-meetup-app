@@ -1,10 +1,15 @@
 import { MongoClient, ObjectId } from "mongodb";
 
 import MeetupDetails from "@/components/meetups/MeetupDetails";
+import Head from "next/head";
 
 export default function MeetupDetailsPage({meetup}) {
     console.log('dentro il component')
     return <>
+        <Head>
+            <title>React Meetups - See Meetup Details for "{meetup.title}"</title>
+            <meta name="description" content={meetup.description}/>
+        </Head>
         <MeetupDetails 
             id={meetup.id}
             title={meetup.title}
